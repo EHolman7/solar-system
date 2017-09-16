@@ -1,6 +1,11 @@
 "use strict";
+console.log('hey');
+	
 
-	const infoEarth = [{
+const earthDiv = document.getElementById('earth');
+
+	let outputEarth = () => {
+		const infoEarth = [{
 		name: 'Earth', 
 		year: '2017 years ago',
 		mass: '5.972 x 10^24 kg',
@@ -11,10 +16,6 @@
 		explorers: 'People',
 		image: 'https://www.nasa.gov/centers/goddard/images/content/638831main_globe_east_2048.jpg',
 	}];
-
-const earthDiv = document.getElementbyID('earth');
-
-	const outputEarth = (infoEarth) => {
 		console.log("infoEarth", infoEarth);
 	let planetString = '';
 	for (var i=0; i< infoEarth.length; i++){
@@ -36,11 +37,9 @@ const earthDiv = document.getElementbyID('earth');
 	writeToDom(planetString);
 
 };
-
 function writeToDom(strang){
 	earthDiv.innerHTML = strang;
 }
-
 	//return "";
-};
+
 module.exports = outputEarth;

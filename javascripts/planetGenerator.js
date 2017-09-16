@@ -1,8 +1,9 @@
 "use strict";
 
 const earth = require('./earth');
+console.log(earth);
 
-const greetingGenerator = {
+const planetGenerator = {
 	earth
 };
 
