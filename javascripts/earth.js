@@ -2,10 +2,7 @@
 console.log('hey');
 	
 
-const earthDiv = document.getElementById('earth');
-
-	let outputEarth = () => {
-		const infoEarth = [{
+const infoEarth = {
 		name: 'Earth', 
 		year: '2017 years ago',
 		mass: '5.972 x 10^24 kg',
@@ -14,32 +11,27 @@ const earthDiv = document.getElementById('earth');
 		atmosphere: '78% nitrogen, 21% oxygen, 1% argon',
 		satellites: 'Moon',
 		explorers: 'People',
-		image: 'https://www.nasa.gov/centers/goddard/images/content/638831main_globe_east_2048.jpg',
-	}];
-		console.log("infoEarth", infoEarth);
-	let planetString = '';
-	for (var i=0; i< infoEarth.length; i++){
-		var newPlanet = '';
-		newPlanet += `<div class="planetBox" id="planetBox-${i}">`;
-		newPlanet += `<div class="planetName hidden">${infoEarth[i].name}</div>`;
-		newPlanet += `<img class="planetImage" src="${infoEarth[i].url}">`;
-		newPlanet += `<div class="planetYear">Year of discovery: ${infoEarth[i].year}</div>`;
-		newPlanet += `<div class="planetMass">Mass: ${infoEarth[i].mass}</div>`;
-		newPlanet += `<div class="planetSize">Size: ${infoEarth[i].size}</div>`;
-		newPlanet += `<div class="planetSun">Distance from Sun: ${infoEarth[i].sun}</div>`;
-		newPlanet += `<div class="planetAtmosphere">Atmosphere: ${infoEarth[i].atmosphere}</div>`;
-		newPlanet += `<div class="planetSatellites">Satellites: ${infoEarth[i].satellites}</div>`;
-		newPlanet += `<div class="planetExplorers">Explorers: ${infoEarth[i].explorers}</div>`;
+		url: 'https://www.nasa.gov/centers/goddard/images/content/638831main_globe_east_2048.jpg',
+	};
+
+
+	
+const outputTo = (domELement) => {
+	let newPlanet = "";
+		newPlanet += `<div class="planetBox" id="planetBox">`;
+		newPlanet += `<div class="planetName hidden">${infoEarth.name}</div>`;
+		newPlanet += `<img class="planetImage" src="${infoEarth.url}">`;
+		newPlanet += `<div class="planetYear">Year of discovery: ${infoEarth.year}</div>`;
+		newPlanet += `<div class="planetMass">Mass: ${infoEarth.mass}</div>`;
+		newPlanet += `<div class="planetSize">Size: ${infoEarth.size}</div>`;
+		newPlanet += `<div class="planetSun">Distance from Sun: ${infoEarth.sun}</div>`;
+		newPlanet += `<div class="planetAtmosphere">Atmosphere: ${infoEarth.atmosphere}</div>`;
+		newPlanet += `<div class="planetSatellites">Satellites: ${infoEarth.satellites}</div>`;
+		newPlanet += `<div class="planetExplorers">Explorers: ${infoEarth.explorers}</div>`;
 		newPlanet += `</div>`;
-		planetString += newPlanet;
-	}
-	console.log(planetString);
-	writeToDom(planetString);
 
+	domELement.innerHTML += newPlanet;
 };
-function writeToDom(strang){
-	earthDiv.innerHTML = strang;
-}
-	//return "";
 
-module.exports = outputEarth;
+
+module.exports = outputTo;
